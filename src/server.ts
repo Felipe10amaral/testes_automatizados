@@ -1,6 +1,6 @@
 import express, {Request, Response} from 'express'
 
-const app = express()
+export const app = express()
 
 app.listen(3330, () => {
   console.log("Server is running")
