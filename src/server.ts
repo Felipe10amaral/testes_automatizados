@@ -1,4 +1,5 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
+import { routes } from './routes'
 
 export const app = express()
 
@@ -8,6 +9,4 @@ app.listen(3330, () => {
 
 app.use(express.json())
 
-app.get('/', (req: Request, res: Response) => {
-  return res.status(200).send({ message: 'hello world' })
-})
+app.use(routes)
