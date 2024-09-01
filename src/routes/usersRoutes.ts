@@ -14,5 +14,13 @@ export function usersRoutes() {
     usersController.listUser(request, response)
   })
 
+  routes.put('/:id', (request: Request, response: Response) => {
+    usersController.updateUser(request, response)
+  })
+
+  routes.delete('/:id', (request: Request, response: Response) => {
+    usersController.deleteUser(request, response)
+  })
+
   return routes
 }

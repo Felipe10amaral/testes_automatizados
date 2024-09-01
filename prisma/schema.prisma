@@ -10,10 +10,21 @@ datasource db {
 model User {
   id       Int    @id @default(autoincrement())
   name     String
+  username String @unique
   email    String @unique
   password String
 
   @@map("user")
+}
+
+model Cliente {
+  id       Int    @id @default(autoincrement())
+  nome     String @unique
+  telefone String
+  cpf      String
+  Nota     Nota[]
+
+  @@map("cliente")
 }
 
 model Nota {
@@ -22,11 +33,9 @@ model Nota {
   modelo      String
   defeito     String
   valor       String
-}
+  clienteId   Int
 
-model Cliente {
-  id       Int    @id @default(autoincrement())
-  nome     String
-  telefone String
-  cpf      String
+  cliente Cliente @relation(fields: [clienteId], references: [id])
+
+  @@map("nota")
 }
