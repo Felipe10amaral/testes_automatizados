@@ -1,5 +1,4 @@
-// src/useCases/factories/MakeRegisterUser.ts
-import { UsersController } from '../../controller/UsersController';
+import { UsersController } from '../../controller/User/UsersController'
 import { UserService } from '../../useCases/UserUseCase';
 import { PrismaUserRepository } from '../../repositories/PrismaUserRepository';
 

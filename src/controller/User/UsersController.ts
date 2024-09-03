@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { UserService } from '../useCases/UserUseCase';
+import { UserService } from '../../useCases/UserUseCase';
 import { z } from 'zod';
 
 export class UsersController {
