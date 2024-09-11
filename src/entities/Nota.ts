@@ -4,5 +4,5 @@ export interface Nota {
     modelo: string;
     defeito: string;
     valor: string;
-    clienteId?: number;
+    clienteId: number;
 }
