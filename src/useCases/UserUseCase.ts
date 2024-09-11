@@ -40,16 +40,14 @@ export class UserService {
                 throw new Error("Nome de usuário não fornecido");
             }
             
-            //const user = await this.userRepository.findByUsername(username)
+            const user = await this.userRepository.findByUsername(username)
 
-          //  if(!user) {
-           //     throw new Error("Usuario não encontrado")
-           // }
+         
 
             await this.userRepository.updateUser(id, data)
         } catch (error) {
             console.log(error)
-            throw new Error("Erro  usuário")
+            throw new Error("Nome de usuário não fornecido")
         }
     }
 

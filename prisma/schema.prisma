@@ -22,7 +22,6 @@ model Cliente {
   nome     String @unique
   telefone String
   cpf      String
-  Nota     Nota[]
 
   @@map("cliente")
 }
@@ -34,8 +33,6 @@ model Nota {
   defeito     String
   valor       String
   clienteId   Int
-
-  cliente Cliente @relation(fields: [clienteId], references: [id])
 
   @@map("nota")
 }
