@@ -10,15 +10,13 @@ export class UseCaseCliente {
     }
 
     // Verifica se o nome ou CPF já estão em uso
-    private async verificarDuplicidade(nome: string, cpf: string): Promise<void> {
+    private async verificarDuplicidade(cpf: string): Promise<void> {
         const clientes = await this.clienteRepository.findAllClientes();
         if (clientes) {
-            const nomeDuplicado = clientes.some(cliente => cliente.nome === nome);
+            
             const cpfDuplicado = clientes.some(cliente => cliente.cpf === cpf);
 
-            if (nomeDuplicado) {
-                throw new Error('Nome já está em uso.');
-            }
+           
 
             if (cpfDuplicado) {
                 throw new Error('CPF já está em uso.');
@@ -29,7 +27,7 @@ export class UseCaseCliente {
    
     async criarCliente(nome: string, telefone: string, cpf: string): Promise<void> {
         try {
-            await this.verificarDuplicidade(nome, cpf);
+            await this.verificarDuplicidade(cpf);
             
 
             await this.clienteRepository.createCliente(nome, telefone, cpf);
@@ -41,8 +39,8 @@ export class UseCaseCliente {
 
     async atualizarCliente(id: number, data: Partial<{ nome: string; telefone: string; cpf: string }>): Promise<void> {
         try {
-            if (data.nome || data.cpf) {
-                await this.verificarDuplicidade(data.nome || '', data.cpf || '');
+            if (data.cpf) {
+                await this.verificarDuplicidade(data.cpf || '');
             }
 
            
