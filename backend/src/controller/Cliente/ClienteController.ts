@@ -5,8 +5,8 @@ import { IClienteRepository } from '../../contracts/IClientRepository';
 export class ClienteController {
     private useCaseCliente: UseCaseCliente;
 
-    constructor(clienteRepository: IClienteRepository) {
-        this.useCaseCliente = new UseCaseCliente(clienteRepository);
+    constructor(clienteService: UseCaseCliente) {
+        this.useCaseCliente = clienteService
     }
 
     // Método para criar um novo cliente com validação

@@ -1,7 +1,10 @@
 import { UseCaseCliente } from '../Cliente/UseCaseCliente';
 import { PrismaClienteRepository } from '../../repositories/Cliente/PrismaClientRepository';
+import { ClienteController } from '../../controller/Cliente/ClienteController';
 
-export function makeClientesUseCase(): UseCaseCliente {
+
+export function makeClientesUseCase(): ClienteController {
   const clienteRepository = new PrismaClienteRepository();
-  return new UseCaseCliente(clienteRepository);
+  const clienteService = new UseCaseCliente(clienteRepository);
+  return new ClienteController(clienteService);
 }
