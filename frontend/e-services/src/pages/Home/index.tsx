@@ -22,8 +22,8 @@ export function Home() {
           <a href="/cadastrar-cliente" className="text-lg font-medium hover:text-red-500 transition-colors">
             Cadastrar Cliente
           </a>
-          <a href="/cadastrar-servico" className="text-lg font-medium hover:text-red-500 transition-colors">
-            Cadastrar Serviço
+          <a href="/usuario" className="text-lg font-medium hover:text-red-500 transition-colors">
+            Cadastrar Usuario
           </a>
           <a href="/cadastrar-nota" className="text-lg font-medium hover:text-red-500 transition-colors">
             Cadastrar Nota de Serviço

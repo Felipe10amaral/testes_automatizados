@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom'; // Importa as asserções adicionais
+import {expect, it, describe} from 'vitest'
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { Home } from "./Home";
+import { Home } from "./index";
 
 // Função auxiliar para renderizar a página Home com Router
 function renderHome() {
