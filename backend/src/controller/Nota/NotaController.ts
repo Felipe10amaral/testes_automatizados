@@ -12,6 +12,8 @@ export class NotaController {
     public async criarNota(req: Request, res: Response): Promise<void> {
         const { clienteId, nameCliente, modelo, defeito, valor } = req.body;
 
+        console.log(clienteId, nameCliente, modelo, defeito, valor);
+
         if (!nameCliente || typeof nameCliente !== 'string' || nameCliente.trim() === '') {
             res.status(400).json({ message: 'Nome do cliente é obrigatório e deve ser uma string não vazia.' });
             return;
